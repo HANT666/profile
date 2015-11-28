@@ -1,0 +1,161 @@
+@charset "utf-8";
+
+@tv     : ~"only screen and (min-width: 1824px)";
+@desktop: ~"only screen and (min-width: 1440px)";
+@screen : ~"only screen and (min-width: 1367px)";
+@laptop : ~"only screen and (min-width: 1281px)";
+@tablet : ~"only screen and (min-width: 961px)";
+@fablet : ~"only screen and (min-width: 721px)";
+@medium : ~"only screen and (min-width: 641px)";
+@small  : ~"only screen and (min-width: 601px)";
+@mobile : ~"only screen and (min-width: 481px)";
+@phone  : ~"only screen and (min-width: 321px)";
+@watch  : ~"only screen and (max-width: 320px)";
+
+.shadow (...) {
+  box-shadow: @arguments; // :+
+}
+
+.animate (@sec: .6s, @property: all, @type: ease) {
+  transition: @arguments;
+}
+
+.font (@size: 16px, @style: normal, @line: normal, @family:'Tahoma') {
+  font: @style @size / @line @family, sans-serif;
+}
+
+.gradient(@color-top:@color-white, @color-bottom:@color-black, @angle:180deg) {
+  @color-middle: average(@color-top, @color-bottom);
+  background:@color-middle;
+  background:@color-middle linear-gradient(@angle, @color-top, @color-bottom);
+  // filter:e("progid:DXImageTransform.Microsoft.gradient(startColorstr=@{color-top}, endColorstr=@{color-bottom}, GradientType=0)");
+  // zoom:1;
+}
+
+.coloring (@background: @color-white, @foreground: @color-black) when     (@background = none) {
+  background: none;
+  color: @foreground;
+}
+.coloring (@background: @color-white, @foreground: @color-black) when not (@background = none) {
+  background-color: @background;
+  color: @foreground;
+}
+
+.edge (@color: none, @width: 1px) when     (@color = none) {
+  border: none;
+}
+.edge (@color: none, @width: 1px) when not (@color = none) {
+  border: @width solid @color;
+}
+
+.size (@width: 0, @height: 0) {
+  width:  @width;
+  height: @height;
+}
+
+.arrow(@size, @color, @direction) { // стрелочки
+  .edge(transparent, @size);
+  .size(0, 0);
+  display: block;
+  position: absolute;
+  content: '';
+}
+.arrow(@size, @color, @direction) when (@direction = left) {
+  border-left:none;
+  border-right-color:@color;
+}
+.arrow(@size, @color, @direction) when (@direction = right) {
+  border-right:none;
+  border-left-color:@color;
+}
+.arrow(@size, @color, @direction) when (@direction = top) {
+  border-top:none;
+  border-bottom-color:@color;
+}
+.arrow(@size, @color, @direction) when (@direction = bottom) {
+  border-bottom:none;
+  border-top-color:@color;
+}
+
+.xy (@left, @top, @position: none) {
+  left: @left;
+  top:  @top;
+}
+.xy (@left, @top, @position: none) when not (@position = none) {
+  position: @position;
+}
+
+.z (@index: 0, @position: none) {
+  z-index: @index;
+}
+.z (@index: 0, @position: none) when not (@position = none) {
+  position: @position;
+}
+
+.blur (@blur: 5px) {
+  -webkit-filter: blur(@blur);
+  filter: blur(@blur);
+  filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=unit(@blur));
+}
+
+.rounded (@radius: 10px, @side: none) {
+  border-radius: @radius;
+}
+.rounded (@radius: 10px, @side: none) when (@side = top) {
+  border-bottom-left-radius:  0;
+  border-bottom-right-radius: 0;
+}
+.rounded (@radius: 10px, @side: none) when (@side = bottom) {
+  border-top-left-radius:  0;
+  border-top-right-radius: 0;
+}
+.rounded (@radius: 10px, @side: none) when (@side = left) {
+  border-bottom-right-radius: 0;
+  border-top-right-radius:    0;
+}
+.rounded (@radius: 10px, @side: none) when (@side = right) {
+  border-bottom-left-radius: 0;
+  border-top-left-radius:    0;
+}
+
+.indent (@value: 0) {
+  padding: @value;
+  margin:  @value;
+}
+
+.opacity (@value: 0) {
+  @msvalue: @value * 100;
+  opacity:  @value;
+  filter: alpha(opacity=@msvalue);
+}
+
+.cursor (@style: pointer) {
+  cursor: @style;
+}
+
+.box-sizing(@sizing: border-box) {
+  -ms-box-sizing: @sizing;
+  -moz-box-sizing: @sizing;
+  -webkit-box-sizing: @sizing;
+  box-sizing: @sizing;
+}
+
+.inlined() {
+  display: inline-block;
+  zoom: 1; // IE 7-
+  *display: inline;
+}
+
+.circled (@diamter, @font-size:0, @font-style:normal) {
+  .size(@diamter, @diamter);
+  .rounded(@diamter);
+  .font(@font-size, @font-style, @diamter);
+  text-align: center;
+}
+
+.unselectable() {
+  -webkit-user-select: none;  // Chrome / Safari
+  -moz-user-select:    none;  // Firefox
+  -ms-user-select:     none;  // IE 10+
+  user-select:         none;  // Likely future
+}
