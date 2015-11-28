@@ -4,28 +4,33 @@
 html{
   
   // background: linear-gradient(to bottom, #00EE00, #00A000 50%, #00EE00 100%);
-  .gradient(#00EE00, #00A000)}
+  .gradient(darken(#00EE00, 20%), #00A000);
+  background-attachment: fixed;
+  }
 body{
   margin: 0;
 }
 h1{
-  .font(18px);
+  .font(22px, bold);
   text-align: left;
 }
 h2{
-  .font(12px);
+  .font(16px);
   text-align: left;
 }
 h3{
   .font(18px);
+  border-bottom: 1px solid #ccc;
   text-align: left;
   padding-top: 10px;
+  padding-bottom: 3px;
 }
 header{
   padding-left: 30px;
 }
 section{
   padding-left: 30px;
+  padding-right: 30px;
 }
 div { 
   margin-left: auto;
@@ -33,16 +38,19 @@ div {
     text-align: center;
   background-color: white;
 }
-form {
-
-}
 div.main {
+  .rounded(20px);
+  .edge(#999);
   margin: 50px auto;
   .size(50%, 100%);
   background-color: white;
   padding: 30px;
   text-align: left;
 }
+form {
+
+}
+
 label{
   display: block;
   font-size: 14pt;  
@@ -61,6 +69,6 @@ input[text]{
   width: 50%;
 }
 p{
-  
+  .font(14px);
 }
 
