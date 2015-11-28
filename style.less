@@ -9,17 +9,15 @@ body{
   margin: 0;
 }
 h1{
-  font-size: 18pt;
+  .font(18px);
   text-align: left;
 }
 h2{
-  font-size: 12pt;
-  font-weight: normal;
+  .font(12px);
   text-align: left;
 }
 h3{
-  font-size: 18pt;
-  font-weight: normal;
+  .font(18px);
   text-align: left;
   padding-top: 10px;
 }
@@ -29,8 +27,7 @@ header{
 section{
   padding-left: 30px;
 }
-div {
-    
+div { 
   margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -40,14 +37,11 @@ form {
 
 }
 div.main {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 50px;
-  width: 50%;
-  height: 100%;
+  margin: 50px auto;
+  .size(50%, 100%);
   background-color: white;
   padding: 30px;
-  text-align: initial;
+  text-align: left;
 }
 label{
   display: block;
@@ -60,7 +54,7 @@ label[data-required="true"]:after {
   }
 span.description{
   display: block;
-  font-size: 10pt;
+  .font(12px);
   padding-bottom: 5px;
 }
 input[text]{
