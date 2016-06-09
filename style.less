@@ -20,7 +20,7 @@ h2{
 }
 h3{
   .font(18px);
-  border-bottom: 1px solid #ccc;
+  border-bottom: 2px solid #ccc;
   text-align: left;
   padding-top: 10px;
   padding-bottom: 3px;
@@ -65,8 +65,19 @@ span.description{
   .font(12px);
   padding-bottom: 5px;
 }
-input[text]{
-  width: 50%;
+input[type="text"]{
+  width: 33%;
+  padding: 5px;
+  margin: 2px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+input[type="text"]:hover{
+  border: 1px solid green;
+}
+input[type="text"]:focus{
+  border: 3px solid green;
+  margin: 0px;
 }
 p{
   .font(14px);

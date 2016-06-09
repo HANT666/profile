@@ -49,8 +49,8 @@
           <br>
           <input type="radio" name="selector1" value="2" />Нет
           <br>
-          <input type="radio" name="selector1" value="3" />Другое
-          <input type="text" value="" />
+          <input type="radio" name="selector1" value="3" id="other1" placeholder="Ваш ответ" class="other" onclick="other(other_text1)"/>Другое
+          <input type="text" value="" id="other_text1"/>
         </p>
         <p>
           <label for="7" data-required="true">Область деятельности и специфика бизнеса компании </label>
@@ -75,8 +75,8 @@
           <br>
           <input type="radio" name="selector2" value="2" />Нет
           <br>
-          <input type="radio" name="selector2" value="3" />Другое
-          <input type="text" value="" />
+          <input type="radio" name="selector2" value="3" id="other2" onclick="other(other_text2)"/>Другое
+          <input type="text" value="" id="other_text2"/>
         </p>
         <p>
           <label for="11" data-required="true">Общие требования и пожелания к дизайну </label><span class="description">Опишите, каким вы представляете себе дизайн. Какие эмоции и чувства, какой смысл вы хотите передать посетителям.</span>
@@ -143,8 +143,8 @@
           <br>
           <input type="checkbox" name="selector3" value="9" />Розыгрыши и Акции
           <br>
-          <input type="checkbox" name="selector3" value="10" />Другое
-          <input type="text" value="" />
+          <input type="checkbox" name="selector3" value="10" id="other3" onclick="other(other_text3)"/>Другое
+          <input type="text" value="" id="other_text3"/>
         </p>
         <p>
           <label for="22" data-required="true">Наличие формы обратной связи (не для заявок) и т.д. </label>
@@ -170,6 +170,9 @@
         <p>
           <label for="18" data-required="true">Контактное лицо </label><span class="description">Информация, чтобы мы могли с Вами связаться</span>
           <input id="18" type="text" value="" placeholder="Ваш ответ" />
+        </p>
+        <p>
+          <input type="submit"/>
         </p>
 
       </form>
