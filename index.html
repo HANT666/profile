@@ -32,10 +32,15 @@
         </p>
         <p>
           <label id="kazna" for="" data-required="true">Бюджет на разработку сайта </label>
-          <input type="radio" name="selector" value="10000" />
-          <input type="radio" name="selector" value="20000" />
-          <input type="radio" name="selector" value="30000" />
-          <input type="radio" name="selector" value="40000" />
+          <input type="range" min="0" max="100000" step="100" id="size_input" oninput="size1()" value="50000"/>
+          <p id="size_output">50000</p>
+          <div class="site-type" id="15000"><input type="radio" name="site-type" id="" onclick="set_size(15000)">Лендинг (продающий сайт, одностраничник) (15к-25к)</div>
+          <div class="site-type" id="20000"><input type="radio" name="site-type" id="" onclick="set_size(20000)">Блог (20к-30к)</div>
+          <div class="site-type" id="25000"><input type="radio" name="site-type" id="" onclick="set_size(25000)">Сайт-визитка (25к-35к)</div>
+          <div class="site-type" id="25000"><input type="radio" name="site-type" id="" onclick="set_size(25000)">Форум (25к-35к)</div>
+          <div class="site-type" id="35000"><input type="radio" name="site-type" id="" onclick="set_size(35000)">Интернет-магазин (35к-45к)</div>
+          <div class="site-type" id="45000"><input type="radio" name="site-type" id="" onclick="set_size(45000)">Сайт компании (45к и больше)</div>
+          <div class="site-type" id="0"><input type="radio" name="site-type" id="other1" placeholder="Ваш ответ" class="other" onclick="other(other_text0)"/>Другое<input type="text" id="other_text0"/></div>
         </p>
         <p>
           <label for="5" data-required="true">Планируемая дата запуска проекта </label>
