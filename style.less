@@ -1,7 +1,7 @@
 @charset "utf-8";
-@import  "mixin.less";
+@import  "/api/mixin.less";
 
-html{
+html {
   
   // background: linear-gradient(to bottom, #00EE00, #00A000 50%, #00EE00 100%);
   .gradient(darken(#00EE00, 20%), #00A000);
@@ -10,25 +10,25 @@ html{
 body{
   margin: 0;
 }
-h1{
+h1 {
   .font(22px, bold);
   text-align: left;
 }
-h2{
+h2 {
   .font(16px);
   text-align: left;
 }
-h3{
+h3 {
   .font(18px);
   border-bottom: 2px solid #ccc;
   text-align: left;
   padding-top: 10px;
   padding-bottom: 3px;
 }
-header{
+header {
   padding-left: 30px;
 }
-section{
+section {
   padding-left: 30px;
   padding-right: 30px;
 }
@@ -51,7 +51,7 @@ form {
 
 }
 
-label{
+label {
   display: block;
   font-size: 14pt;  
   padding-bottom: 5px;
@@ -60,26 +60,26 @@ label[data-required="true"]:after {
   content:'*'; 
   color:red;
   }
-span.description{
+span.description {
   display: block;
   .font(12px);
   padding-bottom: 5px;
 }
-input[type="text"]{
+input[type="text"] {
   width: 33%;
   padding: 5px;
   margin: 2px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
-input[type="text"]:hover{
+input[type="text"]:hover {
   border: 1px solid green;
 }
-input[type="text"]:focus{
+input[type="text"]:focus {
   border: 3px solid green;
   margin: 0px;
 }
-div.site-type{
+div.site-type {
   text-align: left;
   padding: 5px;
   margin-bottom: 2px;
@@ -87,4 +87,32 @@ div.site-type{
 p{
   .font(14px);
 }
-
+#price-selector { text-align: center; position: relative; font-size: 0;
+  label { .inlined; .size(10%, 30px); color: silver; .animate; position: relative; .font(14px); margin: 0 1%;
+    &:before { display: block; content: ''; .size(10px, 10px); background: lime; margin: 0 auto; }
+    &:after { display: block; content: ''; .arrow(5px, lime, top); left: 50%; margin-left:-5px; top: -5px; }
+    &:first-of-type { margin-left: 0; }
+    &:last-of-type { margin-right: 0; }
+  }
+  input { display: none;
+    &:checked + label { color: blue; width: 20%;
+      &:before { background: red; }
+      &:after { border-bottom-color: red; }
+    }
+    // &:checked + label ~ label { color: green; }
+  }
+  & > div { position: absolute; left: 6%; top: 0; right: 6%; height: 5px; background: lightcoral; 
+    & > div { position: absolute; width: 0; background: green; left: 0; bottom: 0; top: 0; .animate;
+      &:after { display: block; content: ''; position: absolute; right: 0; .circled(10px); top: -2px; background: red; }
+    }
+  }
+  #p1:checked ~ div > div { width: 10%;  }
+  #p2:checked ~ div > div { width: 23.5%;  }
+  #p3:checked ~ div > div { width: 37.5%;  }
+  #p4:checked ~ div > div { width: 51%;  }
+  #p5:checked ~ div > div { width: 64.5%;  }
+  #p6:checked ~ div > div { width: 78%;  }
+  #p7:checked ~ div > div { width: 92%;  }
+  
+  // input + label 
+}
