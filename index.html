@@ -30,43 +30,32 @@
           <label for="3">Планируемый адрес сайта</label><span class="description">Какой примерно адрес сайта вы хотели бы иметь? Мы очень постараемся найти для вас похожий домен, если требуется</span>
           <input id="3" type="text" value="" placeholder="Ваш ответ" />
         </p>
-        <div id="price-selector">
-          <input type="radio" name="price" id="p1">
-          <label for="p1">Price 1</label>
-          <input type="radio" name="price" id="p2">
-          <label for="p2">Price 2</label>
-          <input type="radio" name="price" id="p3">
-          <label for="p3">Price 3</label>
-          <input type="radio" name="price" id="p4">
-          <label for="p4">Price 4</label>
-          <input type="radio" name="price" id="p5">
-          <label for="p5">Price 5</label>
-          <input type="radio" name="price" id="p6">
-          <label for="p6">Price 6</label>
-          <input type="radio" name="price" id="p7">
-          <label for="p7">Price 7</label>
-          <div>
+        <p>
+          <label id="kazna" for="" data-required="true">Бюджет на разработку сайта </label>
+          <div id="price-selector">
+            <input type="radio" name="price" id="p1">
+            <label for="p1">Лендинг </label>
+            <input type="radio" name="price" id="p2">
+            <label for="p2">Блог (20к-30к)</label>
+            <input type="radio" name="price" id="p3">
+            <label for="p3">Сайт-визитка (25к-35к)</label>
+            <input type="radio" name="price" id="p4">
+            <label for="p4">Форум (25к-35к)</label>
+            <input type="radio" name="price" id="p5">
+            <label for="p5">Интернет-магазин (35к-45к)</label>
+            <input type="radio" name="price" id="p6">
+            <label for="p6">Сайт компании (45к и больше)</label>
+            <input type="radio" name="price" id="p7">
+            <label for="p7">Другое</label>
+            <input type="text" id="other_text0" />
             <div>
-              <!-- before -->
-              <!-- content -->
-              <!-- after -->
+              <div>
+                <!-- before -->
+                <!-- content -->
+                <!-- after -->
+              </div>
             </div>
           </div>
-        </div>
-        <p>
-          
-          <label id="kazna" for="" data-required="true">Бюджет на разработку сайта </label>
-          <input type="range" min="0" max="100000" step="100" id="size_input" oninput="size1()" value="50000" />
-          <p id="size_output">50000</p>
-          
-          <div class="site-type" id="15000"><input type="radio" name="site-type" id="" onclick="set_size(15000)">Лендинг (продающий сайт, одностраничник) (15к-25к)</div>
-          <div class="site-type" id="20000"><input type="radio" name="site-type" id="" onclick="set_size(20000)">Блог (20к-30к)</div>
-          <div class="site-type" id="25000"><input type="radio" name="site-type" id="" onclick="set_size(25000)">Сайт-визитка (25к-35к)</div>
-          <div class="site-type" id="25000"><input type="radio" name="site-type" id="" onclick="set_size(25000)">Форум (25к-35к)</div>
-          <div class="site-type" id="35000"><input type="radio" name="site-type" id="" onclick="set_size(35000)">Интернет-магазин (35к-45к)</div>
-          <div class="site-type" id="45000"><input type="radio" name="site-type" id="" onclick="set_size(45000)">Сайт компании (45к и больше)</div>
-          <div class="site-type" id="0"><input type="radio" name="site-type" id="other1" placeholder="Ваш ответ" class="other" onclick="other(other_text0)"
-            />Другое<input type="text" id="other_text0" /></div>
         </p>
         <p>
           <label for="5" data-required="true">Планируемая дата запуска проекта </label>

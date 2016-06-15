@@ -1,5 +1,6 @@
 @charset "utf-8";
 @import  "/api/mixin.less";
+@font-default: Tahoma;
 
 html {
   
@@ -39,7 +40,7 @@ div {
   background-color: white;
 }
 div.main {
-  .rounded(20px);
+  .round(20px);
   .edge(#999);
   margin: 50px auto;
   .size(50%, 100%);
@@ -88,11 +89,13 @@ p{
   .font(14px);
 }
 #price-selector { text-align: center; position: relative; font-size: 0;
-  label { .inlined; .size(10%, 30px); color: silver; .animate; position: relative; .font(14px); margin: 0 1%;
+  
+  label { .inline; .size(10%, 30px); color: silver; .animate; position: relative; .font(10px); margin: 0 1%;
     &:before { display: block; content: ''; .size(10px, 10px); background: lime; margin: 0 auto; }
     &:after { display: block; content: ''; .arrow(5px, lime, top); left: 50%; margin-left:-5px; top: -5px; }
     &:first-of-type { margin-left: 0; }
     &:last-of-type { margin-right: 0; }
+    &:hover { color: red; }
   }
   input { display: none;
     &:checked + label { color: blue; width: 20%;
@@ -103,7 +106,7 @@ p{
   }
   & > div { position: absolute; left: 6%; top: 0; right: 6%; height: 5px; background: lightcoral; 
     & > div { position: absolute; width: 0; background: green; left: 0; bottom: 0; top: 0; .animate;
-      &:after { display: block; content: ''; position: absolute; right: 0; .circled(10px); top: -2px; background: red; }
+      &:after { display: block; content: ''; position: absolute; right: 0; .circle(10px); top: -2px; background: red; }
     }
   }
   #p1:checked ~ div > div { width: 10%;  }
