@@ -2,94 +2,29 @@
 @import  "/api/mixin.less";
 @font-default: Tahoma;
 
-html {
-  
-  // background: linear-gradient(to bottom, #00EE00, #00A000 50%, #00EE00 100%);
-  .gradient(darken(#00EE00, 20%), #00A000);
-  background-attachment: fixed;
-  }
-body{
-  margin: 0;
+html { // background: linear-gradient(to bottom, #00EE00, #00A000 50%, #00EE00 100%);
+  .gradient(darken(#00EE00, 20%), #00A000); background-attachment: fixed; }
+body{ margin: 0; }
+h1 { .font(22px, bold); text-align: left; }
+h2 { .font(16px); text-align: left; }
+h3 { .font(18px); border-bottom: 2px solid #ccc; text-align: left; padding-top: 10px; padding-bottom: 3px; }
+header { padding-left: 30px; }
+section { padding-left: 30px; padding-right: 30px; }
+div { margin-left: auto; margin-right: auto; text-align: center; background-color: white; 
+  &.main { .round(20px); .edge(#999); margin: 50px auto; .size(50%, 100%); background-color: white; padding: 30px; text-align: left; }
+  &.site-type { text-align: left; padding: 5px; margin-bottom: 2px; }
 }
-h1 {
-  .font(22px, bold);
-  text-align: left;
+form {  }
+label { display: block; font-size: 14pt; padding-bottom: 5px; 
+  &[data-required="true"]:after { content:'*'; color:red; }
 }
-h2 {
-  .font(16px);
-  text-align: left;
+span.description { display: block; .font(12px); padding-bottom: 5px; }
+input[type="text"] { width: 33%; padding: 5px; margin: 2px; border: 1px solid #ccc; border-radius: 5px; 
+  &:hover { border: 1px solid green; }
+  &:focus { border: 3px solid green; margin: 0px; }
 }
-h3 {
-  .font(18px);
-  border-bottom: 2px solid #ccc;
-  text-align: left;
-  padding-top: 10px;
-  padding-bottom: 3px;
-}
-header {
-  padding-left: 30px;
-}
-section {
-  padding-left: 30px;
-  padding-right: 30px;
-}
-div { 
-  margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-  background-color: white;
-}
-div.main {
-  .round(20px);
-  .edge(#999);
-  margin: 50px auto;
-  .size(50%, 100%);
-  background-color: white;
-  padding: 30px;
-  text-align: left;
-}
-form {
-
-}
-
-label {
-  display: block;
-  font-size: 14pt;  
-  padding-bottom: 5px;
-}
-label[data-required="true"]:after {
-  content:'*'; 
-  color:red;
-  }
-span.description {
-  display: block;
-  .font(12px);
-  padding-bottom: 5px;
-}
-input[type="text"] {
-  width: 33%;
-  padding: 5px;
-  margin: 2px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-input[type="text"]:hover {
-  border: 1px solid green;
-}
-input[type="text"]:focus {
-  border: 3px solid green;
-  margin: 0px;
-}
-div.site-type {
-  text-align: left;
-  padding: 5px;
-  margin-bottom: 2px;
-}
-p{
-  .font(14px);
-}
-#price-selector { text-align: center; position: relative; font-size: 0;
-  
+p{ .font(14px); }
+#price-selector { text-align: center; position: relative; font-size: 0;  
   label { .inline; .size(10%, 30px); color: silver; .animate; position: relative; .font(10px); margin: 0 1%;
     &:before { display: block; content: ''; .size(10px, 10px); background: lime; margin: 0 auto; }
     &:after { display: block; content: ''; .arrow(5px, lime, top); left: 50%; margin-left:-5px; top: -5px; }
@@ -116,6 +51,4 @@ p{
   #p5:checked ~ div > div { width: 64.5%;  }
   #p6:checked ~ div > div { width: 78%;  }
   #p7:checked ~ div > div { width: 92%;  }
-  
-  // input + label 
 }
