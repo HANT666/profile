@@ -30,18 +30,18 @@ input[type="text"] { width: 33%; padding: 5px; margin: 2px; border: 1px solid #c
 input[type="submit"] { color:#fff; background:@color-button; border:1px solid @color-button - #222; padding:5px 12px; .round(3px); font-family: Arial, Helvetica, sans-serif; 
 background: -webkit-gradient(linear, left top, left bottom, from(@color-button + #151515), to(@color-button - #151515));
 background: -moz-linear-gradient(top,  @color-button + #151515,  @color-button - #151515);
-  &:hover { background:@color-button + #222222; }
+  &:hover { background:@color-button + #222; }
 }
 p{ .font(14px); }
-#price-selector { text-align: center; position: relative; font-size: 0;  
-  label { .inline; .size(10%, 30px); color: silver; .animate; position: relative; .font(10px); margin: 0 1%;
+#price-selector { text-align: center; position: relative; font-size: 0;
+  label { .inline; .size(10%, 30px); color: silver; .animate; position: relative; .font(14px); margin: 0 1%; vertical-align: top; 
     &:before { display: block; content: ''; .size(10px, 10px); background: lime; margin: 0 auto; }
     &:after { display: block; content: ''; .arrow(5px, lime, top); left: 50%; margin-left:-5px; top: -5px; }
     &:first-of-type { margin-left: 0; }
     &:last-of-type { margin-right: 0; }
-    &:hover { color: red; }
+    &:hover { color: black; }
   }
-  input { //display: none;
+  input { display: none;
     &:checked + label { color: blue; width: 20%;
       &:before { background: red; }
       &:after { border-bottom-color: red; }
@@ -61,3 +61,4 @@ p{ .font(14px); }
   #p6:checked ~ div > div { width: 78%;  }
   #p7:checked ~ div > div { width: 92%;  }
 }
+#price-selector + input[type="text"] { position: relative; top: 0px;}
