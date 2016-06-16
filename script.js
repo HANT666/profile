@@ -1,17 +1,17 @@
 window.onload = function(){
-  var label = $("#kazna");
-  label.style.background = "red";
+  /*var label = $("#kazna");
+  label.style.background = "red";*/
 }
 
-/*function $(selector){
+function $(selector){
   return document.querySelector(selector);
-}*/
+}
 
 function other(text_edit){
   text_edit.focus();
 }
 
-function size1(){
+/*function size1(){
   size = document.getElementById("size_input").value;
   document.getElementById("size_output").innerHTML = size;
   
@@ -24,9 +24,9 @@ function size1(){
       }
   }
 }
-
-function set_size(size){
+*/
+/*function set_size(size){
   document.getElementById("size_input").value = size;
   size1();
 }
-
+*/

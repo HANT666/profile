@@ -1,9 +1,12 @@
 @charset "utf-8";
 @import  "/api/mixin.less";
 @font-default: Tahoma;
+@color-backgrnd1: #00EE00;
+@color-backgrnd2: #00A000;
+@color-button: #008800;
 
 html { // background: linear-gradient(to bottom, #00EE00, #00A000 50%, #00EE00 100%);
-  .gradient(darken(#00EE00, 20%), #00A000); background-attachment: fixed; }
+  .gradient(darken(@color-backgrnd1, 20%), @color-backgrnd2); background-attachment: fixed; }
 body{ margin: 0; }
 h1 { .font(22px, bold); text-align: left; }
 h2 { .font(16px); text-align: left; }
@@ -15,13 +18,19 @@ div { margin-left: auto; margin-right: auto; text-align: center; background-colo
   &.site-type { text-align: left; padding: 5px; margin-bottom: 2px; }
 }
 form {  }
-label { display: block; font-size: 14pt; padding-bottom: 5px; 
+label { display: block; font-size: 14pt; padding-bottom: 5px;
+  &:hover { text-shadow: 1px 1px 15px grey; }
   &[data-required="true"]:after { content:'*'; color:red; }
 }
 span.description { display: block; .font(12px); padding-bottom: 5px; }
 input[type="text"] { width: 33%; padding: 5px; margin: 2px; border: 1px solid #ccc; border-radius: 5px; 
   &:hover { border: 1px solid green; }
   &:focus { border: 3px solid green; margin: 0px; }
+}
+input[type="submit"] { color:#fff; background:@color-button; border:1px solid @color-button - #222; padding:5px 12px; .round(3px); font-family: Arial, Helvetica, sans-serif; 
+background: -webkit-gradient(linear, left top, left bottom, from(@color-button + #151515), to(@color-button - #151515));
+background: -moz-linear-gradient(top,  @color-button + #151515,  @color-button - #151515);
+  &:hover { background:@color-button + #222222; }
 }
 p{ .font(14px); }
 #price-selector { text-align: center; position: relative; font-size: 0;  
@@ -32,7 +41,7 @@ p{ .font(14px); }
     &:last-of-type { margin-right: 0; }
     &:hover { color: red; }
   }
-  input { display: none;
+  input { //display: none;
     &:checked + label { color: blue; width: 20%;
       &:before { background: red; }
       &:after { border-bottom-color: red; }
